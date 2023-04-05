@@ -6,6 +6,8 @@ import seaborn as sns
 import wbdata
 
 def read_world_bank_data(file_path):
+    
+    
     """Reads the World Bank format file into a DataFrame.
 
     Args:
@@ -42,6 +44,8 @@ new_indicators = {'Country': ['Afghanistan', 'Albania', 'Algeria', 'Andorra', 'A
 # Using Describe Function
 
 def get_country_data(indicators, countries):
+    
+    
     """
     Returns sub-dataframes for each country in the given dictionary
     of countries and their ISO codes,
@@ -62,11 +66,11 @@ def get_country_data(indicators, countries):
     
     # Rename the columns and index.
     data.rename(columns={indicators["EG.ELC.ACCS.ZS"]: "Access to electricity", 
-                         indicators["SP.POP.GROW"]: "Population growth"}, inplace=True)
+                          indicators["SP.POP.GROW"]: "Population growth"}, inplace=True)
     
     # Update the indicators dictionary to reflect the new names.
     indicators = {"EG.ELC.ACCS.ZS": "Electricity Access (% of population)", 
-                  "SP.POP.GROW": "Population Growth (annual %)"}
+                   "SP.POP.GROW": "Population Growth (annual %)"}
 
     # Create sub-dataframes for each country.
     country_dfs = {}
@@ -91,6 +95,8 @@ country_dfs = get_country_data(indicators, countries)
 
 
 def calculate_mean(data):
+
+
     """
     Calculates the mean values for each numeric column in a dictionary.
 
@@ -110,6 +116,8 @@ def calculate_mean(data):
 
 
 def calculate_median(data):
+
+
     """Calculates the median of each column in a dictionary of data.
 
     Args:
@@ -129,6 +137,8 @@ def calculate_median(data):
 
 
 def calculate_mode(data):
+    
+    
     """
     Calculates the mode for each column in the given data.
 
@@ -175,7 +185,7 @@ for column in selected_columns:
 population_values = new_indicators['Percentage of GDP']
 
 # Plot histograms
-fig, axs = plt.subplots(1, 3, figsize=(15,5), sharey=True)
+fig, axs = plt.subplots(1, 3, figsize=(15, 5), sharey=True)
 fig.subplots_adjust(wspace=0.3)
 
 for i, column in enumerate(selected_columns):
