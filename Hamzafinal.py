@@ -197,6 +197,7 @@ for i, column in enumerate(selected_columns):
     axs[i].legend()
 
 plt.suptitle('Histograms of Mean Values for Selected Indicators')
+plt.savefig('histogram.png')
 plt.show()
 
 
@@ -228,6 +229,7 @@ plt.xlabel('Population')
 plt.ylabel('Median Value')
 plt.title('Median Values of Selected Indicators Against Population')
 plt.legend()
+plt.savefig('scatter.png')
 
 # Show plot
 plt.show()
@@ -256,6 +258,7 @@ ax = sns.heatmap(df, cmap='YlGnBu', annot=True, fmt='.2f')
 plt.xlabel('')
 plt.ylabel('')
 plt.title('Mode Values of Selected Indicators', fontsize=16)
+plt.savefig('heatmap.png')
 
 # Show plot
 plt.show()
@@ -287,7 +290,7 @@ ax.set_xticklabels(years)
 ax.tick_params(axis='x', rotation=45)
 
 # Add legend to axis object
-ax.legend()
-
+ax.legend() 
+plt.savefig('barstacked.png')
 # Show plot
 plt.show()
