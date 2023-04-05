@@ -23,7 +23,7 @@ def read_world_bank_data(file_path):
     df_countries.columns = ['Country Name', 'Country Code', 'Indicator Name', 'Indicator Code']
     df_countries.set_index('Country Name', inplace=True)
 
-    # Extract year dataframe
+    # Extract year dataframe and Transpose
     df_years = df.iloc[:, 4:].transpose()
     df_years.columns = df_countries.index
     df_years.index.name = 'Year'
@@ -291,11 +291,3 @@ ax.legend()
 
 # Show plot
 plt.show()
-
-
-
-
-
-
-
-
